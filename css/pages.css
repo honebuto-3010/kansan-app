@@ -163,6 +163,7 @@ html, body {
     display: flex;
     justify-content: space-around;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .tabbar li a {
@@ -248,6 +249,9 @@ html, body {
    スマホ（〜599px）
    ============================ */
 @media (max-width: 599px) {
+
+    .tabbar ul { justify-content: center; gap: 24px; }
+      body { overflow-x: hidden; overflow-y: auto; }
     .unit-box {
         width: 90%;
         margin: 0 auto;
