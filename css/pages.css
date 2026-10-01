@@ -278,7 +278,7 @@ html, body {
     }
 
     .tabbar li a {
-        padding: 14px 0 !important; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
+        padding: 20px 0 !important; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
     }
 }
 
