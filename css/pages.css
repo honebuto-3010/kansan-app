@@ -250,8 +250,12 @@ html, body {
    ============================ */
 @media (max-width: 599px) {
 
-    .tabbar ul { justify-content: center; gap: 24px; }
-      body { overflow-x: hidden; overflow-y: auto; }
+    /* Safari対策：htmlもoverflow解除 */
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .unit-box {
         width: 90%;
         margin: 0 auto;
@@ -265,10 +269,17 @@ html, body {
         font-size: 16px;
     }
 
+    /* 下部ナビ：横幅が絶対に溢れない安全設定 */
     .tabbar ul {
         display: flex;
-        justify-content: space-between;
-        gap: 4px;
+        justify-content: space-around; /* ← space-between禁止 */
+        gap: 0; /* ← gapが横幅を押し広げるので0に */
+        width: 100%;
+        padding: 0 4px;
+    }
+
+    .tabbar li a {
+        padding: 14px 0; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
     }
 }
 
@@ -276,6 +287,13 @@ html, body {
    大型スマホ（600〜899px）
    ============================ */
 @media (min-width: 600px) and (max-width: 899px) {
+
+    /* Safari対策：htmlもoverflow解除 */
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .unit-box {
         width: 70%;
         margin: 0 auto;
@@ -287,6 +305,28 @@ html, body {
 
     .unit-input {
         font-size: 17px;
+    }
+
+    /* 下部ナビ：大型スマホは余白を少し広げつつ安全に収める */
+    .tabbar ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; /* ← center + gapより安全 */
+        gap: 8px; /* ← スマホより少し余裕を持たせる */
+        padding: 0 8px;
+    }
+
+    .tabbar li a {
+        padding: 18px 0; /* ← 大型スマホは少し余裕を戻す */
+    }
+
+    .nav-en {
+        font-size: 13px;
+    }
+
+    .nav-ja {
+        font-size: 14px;
+        margin-top: 2px;
     }
 }
 
