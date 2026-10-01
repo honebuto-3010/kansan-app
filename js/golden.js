@@ -102,7 +102,7 @@ function updateBox(longSide, shortSide) {
     const boxHeight = shortSide * scale;
 
     goldenBox.style.width = boxWidth + "px";
-    goldenBox.style.height = boxHeight + "px";
+    goldenBox.style.height = "auto";
 
     // canvas を黄金比長方形と同じサイズにする
     spiralCanvas.width = boxWidth;
