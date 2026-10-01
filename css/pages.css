@@ -270,16 +270,15 @@ html, body {
 
     /* 下部ナビ：横幅が絶対に溢れない安全設定 */
     .tabbar ul {
-        display: grid !important;
-        grid-template-columns: repeat(6, minmax(70px, 1fr));
-        gap: 0;
+        display: flex;
+        justify-content: space-around; /* ← space-between禁止 */
+        gap: 0; /* ← gapが横幅を押し広げるので0に */
         width: 100%;
         padding: 0 4px;
-         flex-wrap: nowrap !important;   /* ← wrap を完全に殺す */
     }
 
     .tabbar li a {
-        padding: 30px 0 !important; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
+        padding: 30px 0; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
     }
 }
 
