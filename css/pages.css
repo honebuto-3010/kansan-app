@@ -271,7 +271,7 @@ html, body {
     /* 下部ナビ：横幅が絶対に溢れない安全設定 */
     .tabbar ul {
         display: flex;
-        justify-content: space-around; /* ← space-between禁止 */
+        justify-content: space-between !important; /* ← これが決定打 */
         gap: 0; /* ← gapが横幅を押し広げるので0に */
         width: 100%;
         padding: 0 4px;
