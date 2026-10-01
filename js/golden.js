@@ -2,10 +2,6 @@
 // Golden Ratio (Mutare Unitatem)
 // ===============================
 
-canvas.style.width = "100%";
-canvas.style.height = "100%";
-canvas.width = longSide;
-canvas.height = shortSide;
 
 // DOM取得
 const shortInput = document.getElementById("shortInput");
