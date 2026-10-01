@@ -275,6 +275,7 @@ html, body {
         gap: 0; /* ← gapが横幅を押し広げるので0に */
         width: 100%;
         padding: 0 4px;
+         flex-wrap: nowrap !important;   /* ← wrap を完全に殺す */
     }
 
     .tabbar li a {
