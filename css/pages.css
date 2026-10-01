@@ -271,7 +271,7 @@ html, body {
     /* 下部ナビ：横幅が絶対に溢れない安全設定 */
     .tabbar ul {
         display: grid !important;
-        grid-template-columns: repeat(6, 1fr); /* ← 6等分 */
+        grid-template-columns: repeat(6, minmax(70px, 1fr));
         gap: 0;
         width: 100%;
         padding: 0 4px;
