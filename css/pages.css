@@ -272,7 +272,7 @@ html, body {
     .tabbar ul {
         display: flex;
         justify-content: space-between !important; /* ← これが決定打 */
-        gap: 0; /* ← gapが横幅を押し広げるので0に */
+        gap: 2px !important; /* ← gapが横幅を押し広げるので0に */
         width: 100%;
         padding: 0 4px;
          flex-wrap: nowrap !important;   /* ← wrap を完全に殺す */
