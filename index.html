@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="images/new-mu-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>mutare unitatem</title>
+</head>
+<body>
+        <!-- 左バブル（Notula構造） -->
+    <div class="bg-bubble b1"></div>
+    <div class="bg-bubble b2"></div>
+    <div class="bg-bubble b3"></div>
+    <div class="bg-bubble b4"></div>
+    <div class="bg-bubble b5"></div>
+    <div class="bg-bubble b6"></div>
+    <div class="bg-bubble b7"></div>
+
+    <!-- 右寄せタイトル＋Enterボタン -->
+    <section class="center-wrapper">
+        <h1 class="app-title">
+            <span class="main-title">Mutare Unitatem</span>
+            <span class="sub-title">Measurement Tools</span>
+        </h1>
+
+         <!-- 案内文（Enterの代わり） -->
+    <p class="home-guide">換算するものを選んでください</p>
+    </section>
+    <!-- Apple純正タブバー（テキストのみ） -->
+<nav class="tabbar">
+    <ul>
+        <li>
+            <a href="pages/length.html">
+                <span class="nav-en">Length</span>
+                <span class="nav-ja">長さ</span>
+            </a>
+        </li>
+        <li>
+            <a href="pages/weight.html">
+                <span class="nav-en">Weight</span>
+                <span class="nav-ja">重さ</span>
+            </a>
+        </li>
+        <li>
+            <a href="pages/capacity.html">
+                <span class="nav-en">Capacity</span>
+                <span class="nav-ja">容量</span>
+            </a>
+        </li>
+        <li>
+            <a href="pages/screen.html">
+                <span class="nav-en">Screen Size</span>
+                <span class="nav-ja">画面サイズ</span>
+            </a>
+        </li>
+        <li>
+            <a href="pages/golden.html">
+                <span class="nav-en">Golden Ratio</span>
+                <span class="nav-ja">黄金比</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js");
+}
+</script>
+
+
+</body>
+</html>

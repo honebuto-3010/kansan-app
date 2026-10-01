@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Ratio | Mutare Unitatem</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        /* 黄金比長方形の表示領域 */
+        #goldenBox {
+            margin: 30px auto;
+            background: #ffffff;
+            border: 2px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+<body class="page-body">
+
+<!-- タイトル -->
+<header class="page-header">
+    <h1 class="page-title">
+        <span class="title-en">Golden Ratio</span>
+        <span class="title-ja">黄金比の計算</span>
+    </h1>
+    <p class="page-subtitle">1 : 1.6180339887</p>
+</header>
+
+<!-- 入力UI（短辺・長辺） -->
+<div class="unit-box">
+    <label class="unit-label">
+        <span class="label-en">Short side</span>
+        <span class="label-ja">短辺</span>
+    </label>
+    <input type="number" id="shortInput" class="unit-input" placeholder="0">
+
+    <label class="unit-label">
+        <span class="label-en">Long side</span>
+        <span class="label-ja">長辺</span>
+    </label>
+    <input type="number" id="longInput" class="unit-input" placeholder="0">
+</div>
+
+<!-- 黄金比長方形の表示 -->
+<div id="goldenBox">
+    <canvas id="spiralCanvas"></canvas>
+</div>
+
+<!-- 説明文 -->
+<p class="golden-desc">
+    黄金螺旋は、黄金比（1 : 1.618…）で分割された長方形の中に
+    四分円を連続して描くことで生まれる曲線です。
+    自然界の成長パターン（貝殻・台風・銀河・植物）にも現れ、
+    人が「美しい」と感じる形の代表とされています。
+    <br><br>
+    <strong>short</strong> は短い辺、<strong>long</strong> は長い辺。  
+    2つは黄金比（1 : 1.618…）で結ばれています。
+</p>
+
+<!-- リセット -->
+<div class="reset-box">
+    <button id="resetButton" class="reset-button">Reset</button>
+</div>
+
+<!-- 下部ナビ（二言語） -->
+<nav class="tabbar">
+    <ul>
+        <li>
+            <a href="../index.html">
+                <span class="nav-en">Home</span>
+                <span class="nav-ja">ホーム</span>
+            </a>
+        </li>
+        <li>
+            <a href="length.html">
+                <span class="nav-en">Length</span>
+                <span class="nav-ja">長さ</span>
+            </a>
+        </li>
+        <li>
+            <a href="weight.html">
+                <span class="nav-en">Weight</span>
+                <span class="nav-ja">重さ</span>
+            </a>
+        </li>
+        <li>
+            <a href="capacity.html">
+                <span class="nav-en">Capacity</span>
+                <span class="nav-ja">容量</span>
+            </a>
+        </li>
+        <li>
+            <a href="screen.html">
+                <span class="nav-en">Screen Size</span>
+                <span class="nav-ja">画面サイズ</span>
+            </a>
+        </li>
+        <li>
+            <a href="golden.html" class="active">
+                <span class="nav-en">Golden Ratio</span>
+                <span class="nav-ja">黄金比</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <script src="../js/golden.js"></script>
+</body>
+
+</html>

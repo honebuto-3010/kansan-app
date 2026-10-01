@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pages.css">
+    <title>length</title>
+</head>
+<body>
+    <body class="page-body">
+
+  <!-- タイトル（中央上） -->
+<header class="page-header">
+    <h1 class="page-title">
+        <span class="title-en">Length</span>
+        <span class="title-ja">長さの換算</span>
+    </h1>
+</header>
+
+<!-- 変換ペア選択（中央） -->
+<div class="unit-select-box">
+    <select id="unitPair">
+        <option value="mm-cm">mm ⇄ cm</option>
+        <option value="cm-m">cm ⇄ m</option>
+        <option value="m-km">m ⇄ km</option>
+        <option value="m-yard">m ⇄ yard</option>
+        <option value="cm-feet">cm ⇄ feet</option>
+    </select>
+</div>
+
+<!-- 入力UI（中央） -->
+<div class="unit-box">
+    <label id="labelA" class="unit-label">
+        <span class="label-en">mm</span>
+        <span class="label-ja">ミリメートル</span>
+    </label>
+    <input type="number" id="inputA" class="unit-input" placeholder="0">
+
+    <label id="labelB" class="unit-label">
+        <span class="label-en">cm</span>
+        <span class="label-ja">センチメートル</span>
+    </label>
+    <input type="number" id="inputB" class="unit-input" placeholder="0">
+</div>
+
+<!-- リセットボタン（中央下） -->
+<div class="reset-box">
+    <button id="resetButton" class="reset-button">Reset</button>
+</div>
+
+<!-- 下部ナビ（Home追加版・二言語） -->
+<nav class="tabbar">
+    <ul>
+        <li>
+            <a href="../index.html">
+                <span class="nav-en">Home</span>
+                <span class="nav-ja">ホーム</span>
+            </a>
+        </li>
+        <li>
+            <a href="length.html" class="active">
+                <span class="nav-en">Length</span>
+                <span class="nav-ja">長さ</span>
+            </a>
+        </li>
+        <li>
+            <a href="weight.html">
+                <span class="nav-en">Weight</span>
+                <span class="nav-ja">重さ</span>
+            </a>
+        </li>
+        <li>
+            <a href="capacity.html">
+                <span class="nav-en">Capacity</span>
+                <span class="nav-ja">容量</span>
+            </a>
+        </li>
+        <li>
+            <a href="screen.html">
+                <span class="nav-en">Screen Size</span>
+                <span class="nav-ja">画面サイズ</span>
+            </a>
+        </li>
+        <li>
+            <a href="golden.html">
+                <span class="nav-en">Golden Ratio</span>
+                <span class="nav-ja">黄金比</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <script src="../js/length.js"></script>
+</body>
+</html>

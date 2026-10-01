@@ -1,0 +1,23 @@
+{
+  "name": "Mutare Unitatem",
+  "short_name": "Unitatem",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#FF9500",
+
+  "icons": [
+    {
+      "src": "images/192-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/512-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
