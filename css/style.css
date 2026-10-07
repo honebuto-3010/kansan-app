@@ -89,13 +89,16 @@ html, body {
 /* ============================
    Apple純正タブバー（英語＋日本語・オレンジ）
 ============================ */
+/* ============================
+   タブバー（アイコン＋日本語のみ）
+============================ */
 .tabbar {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background: #ffffff;
-    border-top: 1px solid #1c1c1c;
+    border-top: 2px solid #ff9500;
     z-index: 10;
 }
 
@@ -103,43 +106,62 @@ html, body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     list-style: none;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* ← トップページは折り返し無し */
 }
 
+/* 各タブの構造（アイコン＋日本語） */
 .tabbar li a {
     display: flex;
-    flex-direction: column; /* ← 英語→日本語の縦並び */
+    flex-direction: column; /* アイコン → 日本語の縦並び */
     align-items: center;
     justify-content: center;
-    padding: 18px 0; /* ← 28pxだと縦並びが重くなるので調整 */
+    padding: 14px 0;
     text-decoration: none;
 }
 
-.nav-en {
-    font-size: 12px;
-    color: #FF9500; /* 英語は淡いオレンジ */
-    font-weight: 500;
+/* アイコン */
+.nav-icon {
+    width: 22px;   /* Apple純正に近いサイズ */
+    height: 22px;
+    margin-bottom: 4px;
+    opacity: 0.92; /* 少し柔らかく */
 }
 
+/* 日本語ラベル */
 .nav-ja {
     font-size: 13px;
-    margin-top: 2px;
-    color: #222; /* 日本語が主役 */
+    color: #222;
     font-weight: 600;
 }
 
-.tabbar li a:hover .nav-en,
+/* ホバー時（オレンジ強調） */
 .tabbar li a:hover .nav-ja {
-    color: #e68600; /* ホバー時のオレンジ */
+    color: #e68600;
 }
+
+.tabbar li a:hover .nav-icon {
+    opacity: 1;
+}
+
+/* active（現在ページ） */
+.tabbar li a.active .nav-ja {
+    color: #FF9500; /* Apple純正オレンジ */
+    font-weight: 700;
+}
+
+.tabbar li a.active .nav-icon {
+    display: none; /* ← 現在ページはアイコン非表示 */
+}
+
 
 /* ============================
    スマホ（〜599px）
    ============================ */
 @media (max-width: 599px) {
-    .tabbar ul { justify-content: center; gap: 24px; }
+
+     .tabbar ul { justify-content: space-evenly; gap: 0; }
       body { overflow-x: hidden; overflow-y: auto; }
     .page-title {
         font-size: 28px;
@@ -165,6 +187,22 @@ html, body {
 
     .bubble {
         opacity: 0.22;
+    }
+}
+
+@media (max-width: 599px) {
+    .tabbar li a {
+        padding: 10px 0; /* ← スマホは少し軽く */
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 2px;
+    }
+
+    .nav-ja {
+        font-size: 12px;
     }
 }
 
