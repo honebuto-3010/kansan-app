@@ -191,6 +191,10 @@ html, body {
 }
 
 @media (max-width: 599px) {
+
+      .tabbar {
+        bottom: 24px;
+    }
     .tabbar li a {
         padding: 10px 0; /* ← スマホは少し軽く */
     }
@@ -231,6 +235,15 @@ html, body {
     .bubble {
         opacity: 0.20;
     }
+}
+@media (max-width: 599px) {
+    .b1 { bottom: 300px; }
+    .b2 { bottom: 100px; }
+    .b3 { bottom: 220px; }
+    .b4 { bottom: 280px; }
+    .b5 { bottom: 380px; }
+    .b6 { bottom: 480px; }
+    .b7 { bottom: 150px; }
 }
 
 /* ============================
