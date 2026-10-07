@@ -30,8 +30,9 @@ const urlsToCache = [
   "./pages/golden.html",
 
   // Icons（後で差し替えOK）
-  "./192-icon.png",
-  "./512-icon.png",
+  "./mu-icon-192.png",
+  "./mu-icon-512.png",
+  "./mu-icon.png",
   "./icon_000121_64.png",
   "./icon_109921_64.png",
   "./icon_121911_64.png",
