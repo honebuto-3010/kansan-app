@@ -30,14 +30,14 @@ const urlsToCache = [
   "./pages/golden.html",
 
   // Icons（後で差し替えOK）
-  "./images/192-icon.png",
-  "./images/512-icon.png",
-  "./images/icon_000121_64.png",
-  "./images/icon_109921_64.png",
-  "./images/icon_121911_64.png",
-  "./images/icon_134021_64.png",
-  "./images/icon_144531_64.png",
-  "./images/icon_150381_64.png"
+  "./192-icon.png",
+  "./512-icon.png",
+  "./icon_000121_64.png",
+  "./icon_109921_64.png",
+  "./icon_121911_64.png",
+  "./icon_134021_64.png",
+  "./icon_144531_64.png",
+  "./icon_150381_64.png"
 ];
 
 // インストール（初回キャッシュ）
