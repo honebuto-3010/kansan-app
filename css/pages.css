@@ -16,8 +16,8 @@ a {
     cursor: pointer;
 }
 
-body {
-    padding-bottom: 80px; /* ← 下部ナビの高さ + 余白 */
+.length-page .tabbar {
+    display: none;
 }
 
 /* =========================================
@@ -33,6 +33,8 @@ body {
         #ffffff;
     background-size: 24px 24px;
     color: #111; /* 黒文字に戻す */
+    min-height: 100vh;
+    padding-bottom: 140px;
 }
 
 /* ============================
@@ -41,11 +43,12 @@ body {
 html, body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
     background: #ffffff; /* 白背景 */
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
     color: #111;
-    height: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto; /* スクロール無し */
 }
 
 /* ============================
@@ -60,6 +63,17 @@ html, body {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 4px;
+    position: relative;
+}
+
+.page-title::after {
+    content: "";
+    display: block;
+    width: 36px; /* ← 小さめが美しい */
+    height: 2px;
+    background: #FF9500;
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
 }
 
 .page-subtitle {
@@ -151,101 +165,72 @@ html, body {
 /* ============================
    下部ナビ（固定）
 ============================ */
+/* ============================
+   下部ナビ（固定・アイコン＋日本語のみ）
+============================ */
 .tabbar {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background: #ffffff;
-    border-top: 1px solid #e5e5e5;
+    border-top: 2px solid #ff9500;
     z-index: 10;
 }
 
+/* 均等配置（space-evenly）で美しく広がる */
 .tabbar ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly; /* ← これが最も美しい */
     list-style: none;
+    flex-wrap: nowrap;
 }
 
-.tabbar li a {
-    display: block;
-    padding: 28px 0; /* ← 高さ28px（あなたの設定） */
-    font-size: 14px;
-    text-decoration: none;
-    color: #FF9500; /* オレンジブランド */
-    font-weight: 500;
-}
-
-.tabbar li a.active {
-    color: #e68600; /* 現在ページ強調 */
-}
-
-/* タイトル二言語 */
-.page-title {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.title-en {
-    font-size: 22px;
-    font-weight: 600;
-    color: #ff9500;
-}
-
-.title-ja {
-    font-size: 14px;
-    color: #777;
-    margin-top: 4px;
-}
-
-/* ラベル二言語 */
-.unit-label {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    color: #222;
-}
-
-.label-en {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.label-ja {
-    font-size: 12px;
-    color: #777;
-    margin-top: 2px;
-}
-
-/* ナビゲーション二言語（あなたのオレンジUIに合わせた） */
+/* タブの構造（アイコン → 日本語） */
 .tabbar li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 18px 0;
+    justify-content: center;
+    padding: 14px 0;
     text-decoration: none;
+    color: #222;
 }
 
-.nav-en {
-    font-size: 12px;
-    color: #FF9500;
-    font-weight: 500;
+/* アイコン */
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 4px;
+    opacity: 0.92;
 }
 
+/* 日本語ラベル */
 .nav-ja {
     font-size: 13px;
-    color: #222;
-    margin-top: 2px;
     font-weight: 600;
+    color: #222;
 }
 
-.tabbar li a:hover .nav-en,
+/* ホバー時（オレンジ強調） */
 .tabbar li a:hover .nav-ja {
     color: #e68600;
+}
+
+.tabbar li a:hover .nav-icon {
+    opacity: 1;
+}
+
+/* active（現在ページ）→ アイコン非表示＋日本語強調 */
+.tabbar li a.active .nav-icon {
+    display: none;
+}
+
+.tabbar li a.active .nav-ja {
+    color: #FF9500;
+    font-weight: 700;
 }
 
 /* ============================
@@ -275,16 +260,18 @@ html, body {
     /* 下部ナビ：横幅が絶対に溢れない安全設定 */
     .tabbar ul {
         display: flex;
-        justify-content: space-around; /* ← space-between禁止 */
+        justify-content: space-evenly; /* ← space-between禁止 */
         gap: 0; /* ← gapが横幅を押し広げるので0に */
         width: 100%;
         padding: 0 4px;
     }
 
     .tabbar li a {
-        padding: 30px 0; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
+        padding: 14px 0; /* ← 高さを少し縮めて横幅圧迫を防ぐ */
     }
 }
+
+
 
 /* ============================
    大型スマホ（600〜899px）
@@ -314,8 +301,8 @@ html, body {
     .tabbar ul {
         width: 100%;
         display: flex;
-        justify-content: space-around; /* ← center + gapより安全 */
-        gap: 8px; /* ← スマホより少し余裕を持たせる */
+        justify-content: space-evenly; /* ← center + gapより安全 */
+        gap: 0; /* ← スマホより少し余裕を持たせる */
         padding: 0 8px;
     }
 
@@ -323,9 +310,6 @@ html, body {
         padding: 18px 0; /* ← 大型スマホは少し余裕を戻す */
     }
 
-    .nav-en {
-        font-size: 13px;
-    }
 
     .nav-ja {
         font-size: 14px;
@@ -352,10 +336,9 @@ html, body {
 
     /* ナビゲーションを3列にする */
     .tabbar ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: 12px;
-        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 4px;
     }
 }
 
@@ -377,9 +360,8 @@ html, body {
     }
 
     .tabbar ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: 16px;
-        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 4px;
     }
 }
