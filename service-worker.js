@@ -31,7 +31,13 @@ const urlsToCache = [
 
   // Icons（後で差し替えOK）
   "./images/192-icon.png",
-  "./images/512-icon.png"
+  "./images/512-icon.png",
+  "./images/icon_000121_64.png",
+  "./images/icon_109921_64.png",
+  "./images/icon_121911_64.png",
+  "./images/icon_134021_64.png",
+  "./images/icon_144531_64.png",
+  "./images/icon_150381_64.png"
 ];
 
 // インストール（初回キャッシュ）
@@ -47,15 +53,17 @@ self.addEventListener("install", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      // キャッシュがあれば返す
       if (response) {
         return response;
       }
-      // なければネットワークへ
-      return fetch(event.request);
+
+      return fetch(event.request).catch(() => {
+        return caches.match("./offline.html");
+      });
     })
   );
 });
+
 
 // 古いキャッシュの削除
 self.addEventListener("activate", event => {
@@ -72,4 +80,4 @@ self.addEventListener("activate", event => {
   );
 });
 
-return fetch(event.request).catch(() => caches.match("./offline.html"));
+
